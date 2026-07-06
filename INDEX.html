@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>CapAgent &mdash; Project Reading Guide</title>
+<style>
+ * { box-sizing: border-box; }
+ body { margin:0; font-family: -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        color:#1b1f24; height:100vh; display:flex; }
+ #side { width:340px; min-width:260px; max-width:50%; border-right:1px solid #e1e4e8;
+         overflow:auto; padding:10px 6px; background:#fafbfc; resize:horizontal; }
+ #main { flex:1; overflow:auto; padding:24px 34px; }
+ h1 { font-size:24px; } h2 { border-bottom:1px solid #eaecef; padding-bottom:5px; margin-top:26px; }
+ .lead { font-size:15px; color:#24292e; } .hint{color:#57606a;font-size:13px;}
+ #side ul { list-style:none; margin:0; padding-left:14px; }
+ #side .file { cursor:pointer; padding:2px 6px; border-radius:4px; font-size:13px; color:#0550ae; }
+ #side .file:hover { background:#eef4ff; }
+ #side .file.active { background:#dbeafe; font-weight:600; }
+ .caret { cursor:pointer; font-weight:600; font-size:13px; display:block; padding:2px 0; }
+ .caret:before { content:"\25be "; color:#57606a; }
+ .collapsed > ul { display:none; } .collapsed > .caret:before { content:"\25b8 "; }
+ #brand { font-weight:700; padding:6px; font-size:14px; cursor:pointer; }
+ pre { background:#f6f8fa; padding:14px; border-radius:6px; overflow:auto; font-size:12.5px;
+       line-height:1.45; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+ table { border-collapse:collapse; margin:12px 0; font-size:13px; display:block; overflow:auto; }
+ th,td { border:1px solid #d0d7de; padding:5px 9px; text-align:left; } th{background:#f6f8fa;}
+ code { background:#eff1f3; padding:1px 5px; border-radius:4px; font-size:90%; }
+ h3 { margin-top:18px; } a{color:#0550ae;} .path{color:#57606a;font-size:12px;margin-bottom:8px;}
+</style></head><body>
+<div id="side">
+ <div id="brand" onclick="home()">&#9776; CapAgent &mdash; Reading Guide</div>
+ <ul><li class="dir"><span class="caret" onclick="toggle(this)">capagent/</span><ul><li class="dir"><span class="caret" onclick="toggle(this)">capagent/</span><ul><li class="dir"><span class="caret" onclick="toggle(this)">core/</span><ul><li class="file" onclick="show('capagent/capagent/core/__init__.py')">__init__.py</li><li class="file" onclick="show('capagent/capagent/core/acg.py')">acg.py</li><li class="file" onclick="show('capagent/capagent/core/ir.py')">ir.py</li><li class="file" onclick="show('capagent/capagent/core/matrices.py')">matrices.py</li><li class="file" onclick="show('capagent/capagent/core/semantics.py')">semantics.py</li><li class="file" onclick="show('capagent/capagent/core/types.py')">types.py</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">experiments/</span><ul><li class="dir"><span class="caret" onclick="toggle(this)">out/</span><ul><li class="dir"><span class="caret" onclick="toggle(this)">acg/</span><ul><li class="file" onclick="show('capagent/capagent/experiments/out/acg/doc_agent__plan_delete_buggy.json')">doc_agent__plan_delete_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/doc_agent__plan_delete_fixed.json')">doc_agent__plan_delete_fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/doc_agent__plan_send_buggy.json')">doc_agent__plan_send_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/doc_agent__plan_send_choice.json')">doc_agent__plan_send_choice.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/doc_agent__plan_send_fixed.json')">doc_agent__plan_send_fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/manager_agent__plan_dispatch_buggy.json')">manager_agent__plan_dispatch_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/manager_agent__plan_exec_buggy.json')">manager_agent__plan_exec_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/manager_agent__plan_exec_fixed.json')">manager_agent__plan_exec_fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/manager_agent__plan_instr_buggy.json')">manager_agent__plan_instr_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/swe_agent__plan_patch_buggy.json')">swe_agent__plan_patch_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/swe_agent__plan_patch_fixed.json')">swe_agent__plan_patch_fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/swe_agent__plan_verdict_buggy.json')">swe_agent__plan_verdict_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg/swe_agent__plan_verdict_fixed.json')">swe_agent__plan_verdict_fixed.json</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">certificates/</span><ul><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/delegate-buggy.json')">delegate-buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/delegate-fixed.json')">delegate-fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/delete-buggy.json')">delete-buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/delete-fixed.json')">delete-fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/doc_agent__plan_delete_buggy.json')">doc_agent__plan_delete_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/doc_agent__plan_delete_fixed.json')">doc_agent__plan_delete_fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/doc_agent__plan_send_buggy.json')">doc_agent__plan_send_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/doc_agent__plan_send_choice.json')">doc_agent__plan_send_choice.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/doc_agent__plan_send_fixed.json')">doc_agent__plan_send_fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/exec-buggy.json')">exec-buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/exec-fixed.json')">exec-fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/instr-buggy.json')">instr-buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/instr-fixed.json')">instr-fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/manager_agent__plan_dispatch_buggy.json')">manager_agent__plan_dispatch_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/manager_agent__plan_exec_buggy.json')">manager_agent__plan_exec_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/manager_agent__plan_exec_fixed.json')">manager_agent__plan_exec_fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/manager_agent__plan_instr_buggy.json')">manager_agent__plan_instr_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/nc-exec-trusted.json')">nc-exec-trusted.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/nc-patch-task.json')">nc-patch-task.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/nc-send-authorized.json')">nc-send-authorized.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/nc-send-public.json')">nc-send-public.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/overwrite-buggy.json')">overwrite-buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/overwrite-fixed.json')">overwrite-fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/patch-buggy.json')">patch-buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/patch-fixed.json')">patch-fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/send-buggy.json')">send-buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/send-fixed.json')">send-fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/swe_agent__plan_patch_buggy.json')">swe_agent__plan_patch_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/swe_agent__plan_patch_fixed.json')">swe_agent__plan_patch_fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/swe_agent__plan_verdict_buggy.json')">swe_agent__plan_verdict_buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/swe_agent__plan_verdict_fixed.json')">swe_agent__plan_verdict_fixed.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/verdict-buggy.json')">verdict-buggy.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificates/verdict-fixed.json')">verdict-fixed.json</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">domain_specs/</span><ul><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/delegate-buggy.yaml')">delegate-buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/delegate-fixed.yaml')">delegate-fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/delete-buggy.yaml')">delete-buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/delete-fixed.yaml')">delete-fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/doc_agent__plan_delete_buggy.yaml')">doc_agent__plan_delete_buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/doc_agent__plan_delete_fixed.yaml')">doc_agent__plan_delete_fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/doc_agent__plan_send_buggy.yaml')">doc_agent__plan_send_buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/doc_agent__plan_send_choice.yaml')">doc_agent__plan_send_choice.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/doc_agent__plan_send_fixed.yaml')">doc_agent__plan_send_fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/exec-buggy.yaml')">exec-buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/exec-fixed.yaml')">exec-fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/instr-buggy.yaml')">instr-buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/instr-fixed.yaml')">instr-fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/manager_agent__plan_dispatch_buggy.yaml')">manager_agent__plan_dispatch_buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/manager_agent__plan_exec_buggy.yaml')">manager_agent__plan_exec_buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/manager_agent__plan_exec_fixed.yaml')">manager_agent__plan_exec_fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/manager_agent__plan_instr_buggy.yaml')">manager_agent__plan_instr_buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/nc-exec-trusted.yaml')">nc-exec-trusted.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/nc-patch-task.yaml')">nc-patch-task.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/nc-send-authorized.yaml')">nc-send-authorized.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/nc-send-public.yaml')">nc-send-public.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/overwrite-buggy.yaml')">overwrite-buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/overwrite-fixed.yaml')">overwrite-fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/patch-buggy.yaml')">patch-buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/patch-fixed.yaml')">patch-fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/send-buggy.yaml')">send-buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/send-fixed.yaml')">send-fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/swe_agent__plan_patch_buggy.yaml')">swe_agent__plan_patch_buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/swe_agent__plan_patch_fixed.yaml')">swe_agent__plan_patch_fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/swe_agent__plan_verdict_buggy.yaml')">swe_agent__plan_verdict_buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/swe_agent__plan_verdict_fixed.yaml')">swe_agent__plan_verdict_fixed.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/verdict-buggy.yaml')">verdict-buggy.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/domain_specs/verdict-fixed.yaml')">verdict-fixed.yaml</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">programs/</span><ul><li class="file" onclick="show('capagent/capagent/experiments/out/programs/delegate-buggy.capagent')">delegate-buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/delegate-fixed.capagent')">delegate-fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/delete-buggy.capagent')">delete-buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/delete-fixed.capagent')">delete-fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/doc_agent__plan_delete_buggy.capagent')">doc_agent__plan_delete_buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/doc_agent__plan_delete_fixed.capagent')">doc_agent__plan_delete_fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/doc_agent__plan_send_buggy.capagent')">doc_agent__plan_send_buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/doc_agent__plan_send_choice.capagent')">doc_agent__plan_send_choice.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/doc_agent__plan_send_fixed.capagent')">doc_agent__plan_send_fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/exec-buggy.capagent')">exec-buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/exec-fixed.capagent')">exec-fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/instr-buggy.capagent')">instr-buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/instr-fixed.capagent')">instr-fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/manager_agent__plan_dispatch_buggy.capagent')">manager_agent__plan_dispatch_buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/manager_agent__plan_exec_buggy.capagent')">manager_agent__plan_exec_buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/manager_agent__plan_exec_fixed.capagent')">manager_agent__plan_exec_fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/manager_agent__plan_instr_buggy.capagent')">manager_agent__plan_instr_buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/nc-exec-trusted.capagent')">nc-exec-trusted.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/nc-patch-task.capagent')">nc-patch-task.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/nc-send-authorized.capagent')">nc-send-authorized.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/nc-send-public.capagent')">nc-send-public.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/overwrite-buggy.capagent')">overwrite-buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/overwrite-fixed.capagent')">overwrite-fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/patch-buggy.capagent')">patch-buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/patch-fixed.capagent')">patch-fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/send-buggy.capagent')">send-buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/send-fixed.capagent')">send-fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/swe_agent__plan_patch_buggy.capagent')">swe_agent__plan_patch_buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/swe_agent__plan_patch_fixed.capagent')">swe_agent__plan_patch_fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/swe_agent__plan_verdict_buggy.capagent')">swe_agent__plan_verdict_buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/swe_agent__plan_verdict_fixed.capagent')">swe_agent__plan_verdict_fixed.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/verdict-buggy.capagent')">verdict-buggy.capagent</li><li class="file" onclick="show('capagent/capagent/experiments/out/programs/verdict-fixed.capagent')">verdict-fixed.capagent</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">tables/</span><ul><li class="file" onclick="show('capagent/capagent/experiments/out/tables/table1_extraction_coverage.csv')">table1_extraction_coverage.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out/tables/table2_3_witness_replay.csv')">table2_3_witness_replay.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out/tables/table4_baseline_comparison.csv')">table4_baseline_comparison.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out/tables/table5_certificates.csv')">table5_certificates.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out/tables/table6_new_warnings.csv')">table6_new_warnings.csv</li></ul></li><li class="file" onclick="show('capagent/capagent/experiments/out/RESULTS.md')">RESULTS.md</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg_edges.csv')">acg_edges.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out/acg_nodes.csv')">acg_nodes.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out/before_after.md')">before_after.md</li><li class="file" onclick="show('capagent/capagent/experiments/out/capability_rules.yaml')">capability_rules.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/certificate_schema.json')">certificate_schema.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/effects.yaml')">effects.yaml</li><li class="file" onclick="show('capagent/capagent/experiments/out/fix_consistency.json')">fix_consistency.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/issues.csv')">issues.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out/manual_labels.csv')">manual_labels.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out/metrics_summary.json')">metrics_summary.json</li><li class="file" onclick="show('capagent/capagent/experiments/out/repos.csv')">repos.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out/witness_replay.csv')">witness_replay.csv</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">out_real/</span><ul><li class="file" onclick="show('capagent/capagent/experiments/out_real/REAL_REPORT.md')">REAL_REPORT.md</li><li class="file" onclick="show('capagent/capagent/experiments/out_real/real_diagnostics.txt')">real_diagnostics.txt</li><li class="file" onclick="show('capagent/capagent/experiments/out_real/real_manifest.json')">real_manifest.json</li><li class="file" onclick="show('capagent/capagent/experiments/out_real/real_metrics.json')">real_metrics.json</li><li class="file" onclick="show('capagent/capagent/experiments/out_real/real_registry.csv')">real_registry.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out_real/real_registry_tools.csv')">real_registry_tools.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out_real/real_repo_summary.csv')">real_repo_summary.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out_real/real_sink_by_kind.csv')">real_sink_by_kind.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out_real/real_sink_inventory.csv')">real_sink_inventory.csv</li><li class="file" onclick="show('capagent/capagent/experiments/out_real/real_witness_replay.csv')">real_witness_replay.csv</li></ul></li><li class="file" onclick="show('capagent/capagent/experiments/__init__.py')">__init__.py</li><li class="file" onclick="show('capagent/capagent/experiments/build_guide.py')">build_guide.py</li><li class="file" onclick="show('capagent/capagent/experiments/run_all.py')">run_all.py</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">realeval/</span><ul><li class="file" onclick="show('capagent/capagent/realeval/__init__.py')">__init__.py</li><li class="file" onclick="show('capagent/capagent/realeval/registry_adapter.py')">registry_adapter.py</li><li class="file" onclick="show('capagent/capagent/realeval/repos.py')">repos.py</li><li class="file" onclick="show('capagent/capagent/realeval/run_real.py')">run_real.py</li><li class="file" onclick="show('capagent/capagent/realeval/scan.py')">scan.py</li><li class="file" onclick="show('capagent/capagent/realeval/witnesses.py')">witnesses.py</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">scaffolds/</span><ul><li class="file" onclick="show('capagent/capagent/scaffolds/__init__.py')">__init__.py</li><li class="file" onclick="show('capagent/capagent/scaffolds/_dsl.py')">_dsl.py</li><li class="file" onclick="show('capagent/capagent/scaffolds/doc_agent.py')">doc_agent.py</li><li class="file" onclick="show('capagent/capagent/scaffolds/manager_agent.py')">manager_agent.py</li><li class="file" onclick="show('capagent/capagent/scaffolds/swe_agent.py')">swe_agent.py</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">tools/</span><ul><li class="file" onclick="show('capagent/capagent/tools/__init__.py')">__init__.py</li><li class="file" onclick="show('capagent/capagent/tools/acg_builder.py')">acg_builder.py</li><li class="file" onclick="show('capagent/capagent/tools/astutil.py')">astutil.py</li><li class="file" onclick="show('capagent/capagent/tools/baselines.py')">baselines.py</li><li class="file" onclick="show('capagent/capagent/tools/caprule_miner.py')">caprule_miner.py</li><li class="file" onclick="show('capagent/capagent/tools/capsafe_checker.py')">capsafe_checker.py</li><li class="file" onclick="show('capagent/capagent/tools/contract_extractor.py')">contract_extractor.py</li><li class="file" onclick="show('capagent/capagent/tools/guard_extractor.py')">guard_extractor.py</li><li class="file" onclick="show('capagent/capagent/tools/llm_assist.py')">llm_assist.py</li><li class="file" onclick="show('capagent/capagent/tools/matrix_compiler.py')">matrix_compiler.py</li><li class="file" onclick="show('capagent/capagent/tools/report_generator.py')">report_generator.py</li><li class="file" onclick="show('capagent/capagent/tools/translator.py')">translator.py</li><li class="file" onclick="show('capagent/capagent/tools/witness_replayer.py')">witness_replayer.py</li></ul></li><li class="file" onclick="show('capagent/capagent/__init__.py')">__init__.py</li><li class="file" onclick="show('capagent/capagent/__main__.py')">__main__.py</li><li class="file" onclick="show('capagent/capagent/cli.py')">cli.py</li><li class="file" onclick="show('capagent/capagent/dataset.py')">dataset.py</li><li class="file" onclick="show('capagent/capagent/kernels.py')">kernels.py</li><li class="file" onclick="show('capagent/capagent/library.py')">library.py</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">policy/</span><ul><li class="file" onclick="show('capagent/policy/capability_rules.yaml')">capability_rules.yaml</li><li class="file" onclick="show('capagent/policy/effects.yaml')">effects.yaml</li></ul></li><li class="dir"><span class="caret" onclick="toggle(this)">tests/</span><ul><li class="file" onclick="show('capagent/tests/test_capagent.py')">test_capagent.py</li></ul></li><li class="file" onclick="show('capagent/.gitignore')">.gitignore</li><li class="file" onclick="show('capagent/EXPERIMENT_REPORT.md')">EXPERIMENT_REPORT.md</li><li class="file" onclick="show('capagent/README.md')">README.md</li><li class="file" onclick="show('capagent/requirements.txt')">requirements.txt</li></ul></li></ul>
+</div>
+<div id="main"></div>
+<script>
+
+const FRONT = document.createElement('template');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+// minimal markdown -> html
+function md(src){
+ const lines = src.split(/\r?\n/); let out=[]; let i=0;
+ function inline(t){
+  t = esc(t);
+  t = t.replace(/`([^`]+)`/g,'<code>$1</code>');
+  t = t.replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>');
+  t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2">$1</a>');
+  return t;
+ }
+ while(i<lines.length){
+  let ln=lines[i];
+  if(/^```/.test(ln)){ let buf=[]; i++; while(i<lines.length && !/^```/.test(lines[i])){buf.push(lines[i]);i++;} i++;
+     out.push('<pre>'+esc(buf.join('\n'))+'</pre>'); continue; }
+  let h=ln.match(/^(#{1,6})\s+(.*)/);
+  if(h){ out.push('<h'+h[1].length+'>'+inline(h[2])+'</h'+h[1].length+'>'); i++; continue; }
+  if(/^\s*\|.*\|\s*$/.test(ln)){ let tbl=[]; while(i<lines.length && /\|/.test(lines[i])){tbl.push(lines[i]);i++;}
+     out.push(renderTable(tbl,inline)); continue; }
+  if(/^\s*[-*]\s+/.test(ln)){ out.push('<ul>'); while(i<lines.length && /^\s*[-*]\s+/.test(lines[i])){
+     out.push('<li>'+inline(lines[i].replace(/^\s*[-*]\s+/,''))+'</li>'); i++;} out.push('</ul>'); continue; }
+  if(/^\s*\d+\.\s+/.test(ln)){ out.push('<ol>'); while(i<lines.length && /^\s*\d+\.\s+/.test(lines[i])){
+     out.push('<li>'+inline(lines[i].replace(/^\s*\d+\.\s+/,''))+'</li>'); i++;} out.push('</ol>'); continue; }
+  if(/^\s*$/.test(ln)){ i++; continue; }
+  if(/^---+$/.test(ln)){ out.push('<hr>'); i++; continue; }
+  let para=[ln]; i++; while(i<lines.length && !/^\s*$/.test(lines[i]) && !/^[#`|]/.test(lines[i]) && !/^\s*[-*]\s/.test(lines[i])){para.push(lines[i]);i++;}
+  out.push('<p>'+inline(para.join(' '))+'</p>');
+ }
+ return out.join('\n');
+}
+function renderTable(rows,inline){
+ rows=rows.filter(r=>!/^\s*\|?\s*[-:| ]+\s*\|?\s*$/.test(r));
+ let h='<table>';
+ rows.forEach((r,ri)=>{ let cells=r.split('|').map(c=>c.trim()).filter((c,idx,a)=>!(idx===0&&c==='')&&!(idx===a.length-1&&c===''));
+   h+='<tr>'; cells.forEach(c=>{h+= ri===0?('<th>'+inline(c)+'</th>'):('<td>'+inline(c)+'</td>');}); h+='</tr>'; });
+ return h+'</table>';
+}
+function renderCSV(src){
+ let rows=src.trim().split(/\r?\n/).map(r=>r.split(','));
+ let h='<table>'; rows.forEach((cells,ri)=>{h+='<tr>';cells.forEach(c=>{h+= ri===0?('<th>'+esc(c)+'</th>'):('<td>'+esc(c)+'</td>');});h+='</tr>';}); return h+'</table>';
+}
+function show(rel){
+ document.querySelectorAll('#side .file').forEach(e=>e.classList.remove('active'));
+ [...document.querySelectorAll('#side .file')].filter(e=>e.getAttribute('onclick').includes("'"+rel+"'")).forEach(e=>e.classList.add('active'));
+ let c=FILES[rel]; let m=document.getElementById('main');
+ if(c===undefined){m.innerHTML='<p>not found</p>';return;}
+ let ext=rel.split('.').pop().toLowerCase();
+ let head='<div class="path">'+esc(rel)+'</div>';
+ if(ext==='md'){ m.innerHTML=head+md(c); }
+ else if(ext==='csv'){ m.innerHTML=head+renderCSV(c); }
+ else { m.innerHTML=head+'<pre>'+esc(c)+'</pre>'; }
+ m.scrollTop=0;
+}
+function home(){ document.getElementById('main').innerHTML=`
+<h1>Capability-Safe Tool Use in Agentic Programs &mdash; CapAgent</h1>
+<p class="lead">A prototype that checks <b>capability-safe tool use</b>: an agent must not
+perform a high-impact tool effect (delete / overwrite / external-send / exec / patch /
+harness-write / verdict / memory-instruction / delegation / credential) unless the current
+abstract state holds a capability matching the effect's <b>kind, resource scope, label, and
+provenance</b>. This page is an index to the whole project &mdash; pick a file on the left.</p>
+
+<h2>1. What was built (process)</h2>
+<ol>
+<li><b>Formal core</b> (<code>capagent/core/</code>): the language <code>&lambda;cap</code>
+(IR), a property-directed abstract domain, an explicit-state capability-safety checker
+(prefix property, Defs 5&ndash;8), and a Boolean-semiring matrix engine with Kleene closure and
+certificates. The two engines are cross-validated to agree on every case.</li>
+<li><b>Toolchain</b> (<code>capagent/tools/</code>): all ten commands of the implementation
+plan &mdash; caprule-miner, contract-extractor, guard-extractor, acg-builder, translator,
+matrix-compiler, capsafe-checker, witness-replayer, report-generator, and an offline
+advisory llm-assist &mdash; plus five diagnostic baselines.</li>
+<li><b>Synthetic evaluation</b> (<code>capagent/experiments/out/</code>): policy kernels
+(one buggy/fixed family per effect kind), extracted agent scaffolds, security witnesses,
+and negative controls.</li>
+<li><b>Real-repository evaluation, Milestone 5</b> (<code>capagent/experiments/out_real/</code>):
+16 pinned real agent frameworks are scanned for a high-impact sink/guard
+inventory, a per-framework <b>registry adapter</b> automatically builds an Action-Capability
+Graph from each tool registry and checks it, and manually-curated witnesses are replayed
+against real sink locations.</li>
+</ol>
+
+<h2>2. Results</h2>
+<h3>Synthetic suite (33 cases)</h3>
+<ul>
+<li>Known-bug replay rate: <b>1.0</b>;
+fixed-version discharge rate: <b>1.0</b>.</li>
+<li>Negative-control false rejections: <b>0</b>;
+diagnostic quality: <b>1.0</b>.</li>
+<li>Explicit-state vs. matrix agreement: <b>1.0</b>
+(max matrix dim 4).</li>
+<li>Baseline comparison: only CapAgent reaches precision = recall = 1.0; sink-only and
+allowlist over-report, guard-dominator misses scope/kind mismatches, taint misses
+pure-authorization bugs. (See <code>tables/table4_baseline_comparison.csv</code>.)</li>
+</ul>
+<h3>Real frameworks (16 repos, 17185 files,
+4,283,971 LOC)</h3>
+<ul>
+<li>Automated high-impact <b>sink inventory: 4855 sites</b>
+(Exec=410, Overwrite=1198, Delete=361,
+SendExt=1712, CredAccess=1174); guard sites:
+7113.</li>
+<li>Registry adapter: <b>509 registered tools</b> discovered
+across 9 frameworks,
+<b>72 high-impact</b>,
+<b>56</b> reachable from a model choice with no
+capability requirement attached in the registry.</li>
+<li>Grounded witness replay: 23 pairs, known-bug replay
+<b>1.0</b>, fixed discharge
+<b>1.0</b>.</li>
+</ul>
+
+<h2>3. Conclusions</h2>
+<ol>
+<li><b>Capability-safety unifies high-impact agent failures</b> across the four families
+(runtime/exec, privilege crossing, harness integrity, resource leakage) as a single
+missing/mismatched capability over &lang;kind, resource, label, provenance&rang;.</li>
+<li><b>Action contracts make agents analyzable.</b> Effect contracts and tool registries are
+recoverable from real source at scale; high-impact effects are pervasive and unevenly
+mediated (guard density varies ~20&times; across frameworks).</li>
+<li><b>The approach explains fixes</b>: every repair maps to guard insertion, scope
+refinement, provenance validation, or declassification, and makes the bad state unreachable.</li>
+<li><b>More diagnostic than simpler defenses.</b> A tool-name allowlist is not a capability;
+only the capability-specific abstraction avoids both the over-reporting of sink/allowlist
+scans and the blind spots of guard-dominator and taint analyses.</li>
+<li><b>Lightweight and checkable.</b> Matrices are tiny and sparse; certificates re-check
+without a language model.</li>
+<li><b>Deliberately narrow.</b> The guarantee is relative to accepted contracts and sound
+extraction; it proves capability-safe high-impact effects, not task/intent/alignment
+correctness. Building a fully faithful ACG for an arbitrary agent loop still needs
+per-framework adapters (the registry adapter is a first automated step).</li>
+</ol>
+<p class="hint">Tip: start with <code>README.md</code>, <code>EXPERIMENT_REPORT.md</code>, and
+<code>capagent/experiments/out_real/REAL_REPORT.md</code>.</p>
+`;
+ let pdf="Capability_Safe_Tool_Use_in_Agentic_Programs 0702.pdf"; if(pdf){document.getElementById('main').innerHTML+='<p class="hint">Paper PDF (not embedded): <code>'+pdf+'</code></p>';} }
+function toggle(el){ el.parentElement.classList.toggle('collapsed'); }
+home();
+</script></body></html>

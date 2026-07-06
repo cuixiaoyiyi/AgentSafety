@@ -1,0 +1,23 @@
+{
+  "repos": 16,
+  "total_files": 17185,
+  "total_loc": 4283971,
+  "total_parse_errors": 1,
+  "total_sink_sites": 4855,
+  "total_guard_sites": 7113,
+  "sink_by_kind": {
+    "Exec": 410,
+    "Delete": 361,
+    "Overwrite": 1198,
+    "SendExt": 1712,
+    "CredAccess": 1174
+  },
+  "witness_pairs": 23,
+  "witness_replay_consistent": 23,
+  "known_bug_replay_rate": 1.0,
+  "fixed_discharge_rate": 1.0,
+  "registry_frameworks_with_tools": 9,
+  "registry_tools_total": 509,
+  "registry_high_impact_total": 72,
+  "registry_unguarded_reachable_total": 56
+}

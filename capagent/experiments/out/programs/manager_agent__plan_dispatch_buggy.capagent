@@ -1,0 +1,2 @@
+task := memread(k_web_untrusted);
+dispatch(shell_role, task)

@@ -1,0 +1,10 @@
+vector_dimensions:
+- ONE
+- HELD::Exec|{sandbox}|private+public|trusted
+- BADCAP
+- UNTR::cmd
+fact_dim: 4
+bad_predicate: BADCAP
+state_basis_dim: 3
+primitive_transitions: 4
+semiring: Boolean

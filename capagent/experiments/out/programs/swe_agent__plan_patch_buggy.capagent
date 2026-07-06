@@ -1,0 +1,2 @@
+c := require(Cap(ModifyRepo, {task/*}, L={'private', 'public'}, Q={'untrusted', 'trusted'}));
+apply_patch_harness(harness/test_1, delta)

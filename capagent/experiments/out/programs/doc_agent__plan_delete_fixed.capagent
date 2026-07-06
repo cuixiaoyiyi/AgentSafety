@@ -1,0 +1,2 @@
+c := require(Cap(Delete, {tmp}, L={'private', 'public'}, Q={'untrusted', 'trusted'}));
+delete_file(tmp)

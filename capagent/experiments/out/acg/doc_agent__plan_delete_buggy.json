@@ -1,0 +1,45 @@
+{
+  "name": "plan_delete_buggy",
+  "entry": "init",
+  "exits": [
+    "too1"
+  ],
+  "nodes": [
+    {
+      "id": "init",
+      "kind": "Init",
+      "label": "initial state",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": ""
+    },
+    {
+      "id": "too1",
+      "kind": "HighImpactSink",
+      "label": "delete_file",
+      "tool": "delete_file",
+      "args": [
+        "tmp"
+      ],
+      "result": null,
+      "effect_kind": "Delete",
+      "high_impact": true,
+      "cap": null,
+      "untrusted": false,
+      "site": "L77"
+    }
+  ],
+  "edges": [
+    {
+      "src": "init",
+      "dst": "too1",
+      "kind": "control"
+    }
+  ],
+  "warnings": []
+}

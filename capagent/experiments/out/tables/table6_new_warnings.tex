@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering
+\begin{tabular}{lllllll}
+\toprule
+case & mode & effect & missing\_capability & sink\_site & status & maintainer\_outcome \\
+\midrule
+send-buggy & M4 & SendExt & Cap(SendExt, dst=ext, label=private) & k\_send:3 & unsafe & synthetic-dataset \\
+delete-buggy & M1 & Delete & Cap(Delete, tmp) & k\_del:1 & unsafe & synthetic-dataset \\
+overwrite-buggy & M4 & Overwrite & Cap(Overwrite, config) & k\_ovr:1 & unsafe & synthetic-dataset \\
+exec-buggy & M1 & Exec & Cap(Exec, provenance=untrusted, sandbox=on) & k\_exec:2 & unsafe & synthetic-dataset \\
+patch-buggy & M3 & ModHarness & Cap(ModHarness, harness/test\_1) & k\_patch:1 & unsafe & synthetic-dataset \\
+verdict-buggy & M3 & Verdict & Cap(Verdict, oracle) & k\_verdict:1 & unsafe & synthetic-dataset \\
+instr-buggy & M2 & InstrUse & Cap(InstrUse, k\_web) & k\_instr:2 & unsafe & synthetic-dataset \\
+delegate-buggy & M2 & Delegate & Cap(Delegate, shell\_role) & k\_deleg:2 & unsafe & synthetic-dataset \\
+doc\_agent/plan\_send\_buggy & M4 & SendExt & Cap(SendExt, dst=ext, label=private) & L66 & unsafe & synthetic-dataset \\
+doc\_agent/plan\_delete\_buggy & M4 & Delete & Cap(Delete, tmp) & L77 & unsafe & synthetic-dataset \\
+doc\_agent/plan\_send\_choice & M4 & SendExt & Cap(SendExt, dst=ext, label=private) & L92 & unsafe & synthetic-dataset \\
+swe\_agent/plan\_patch\_buggy & M3 & ModHarness & Cap(ModHarness, harness/test\_1) & L61 & unsafe & synthetic-dataset \\
+swe\_agent/plan\_verdict\_buggy & M3 & Verdict & Cap(Verdict, oracle) & L70 & unsafe & synthetic-dataset \\
+manager\_agent/plan\_exec\_buggy & M2 & Exec & Cap(Exec, provenance=untrusted, sandbox=on) & L59 & unsafe & synthetic-dataset \\
+manager\_agent/plan\_dispatch\_buggy & M2 & Delegate & Cap(Delegate, shell\_role) & L71 & unsafe & synthetic-dataset \\
+manager\_agent/plan\_instr\_buggy & M2 & InstrUse & Cap(InstrUse, k\_web) & L76 & unsafe & synthetic-dataset \\
+\bottomrule
+\end{tabular}
+\caption{Missing-capability warnings and outcomes.}
+\label{tab:warnings}
+\end{table}

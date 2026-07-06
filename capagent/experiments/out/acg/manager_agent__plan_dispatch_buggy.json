@@ -1,0 +1,66 @@
+{
+  "name": "plan_dispatch_buggy",
+  "entry": "init",
+  "exits": [
+    "too2"
+  ],
+  "nodes": [
+    {
+      "id": "init",
+      "kind": "Init",
+      "label": "initial state",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": ""
+    },
+    {
+      "id": "mr1",
+      "kind": "MemoryRead",
+      "label": "memread k_web",
+      "tool": "",
+      "args": [
+        "k_web"
+      ],
+      "result": "task",
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": true,
+      "site": "L70"
+    },
+    {
+      "id": "too2",
+      "kind": "HighImpactSink",
+      "label": "dispatch",
+      "tool": "dispatch",
+      "args": [
+        "shell_role",
+        "task"
+      ],
+      "result": null,
+      "effect_kind": "Delegate",
+      "high_impact": true,
+      "cap": null,
+      "untrusted": false,
+      "site": "L71"
+    }
+  ],
+  "edges": [
+    {
+      "src": "mr1",
+      "dst": "too2",
+      "kind": "control"
+    },
+    {
+      "src": "init",
+      "dst": "mr1",
+      "kind": "control"
+    }
+  ],
+  "warnings": []
+}

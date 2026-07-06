@@ -1,0 +1,17 @@
+repo,mode,registry_tools,high_impact_tools,unguarded_reachable,flagged_kinds,module_guard_hint_frac
+open-interpreter,M1,0,0,0,,
+smolagents,M3,80,15,13,CredAccess=12;Exec=1,0.0
+SWE-bench,M3,0,0,0,,
+MetaGPT,M2,45,7,7,Overwrite=6;CredAccess=1,0.0
+langchain-mcp-adapters,M4,10,0,0,,
+agno,M1,298,33,24,Overwrite=2;CredAccess=16;Exec=3;Delete=3,0.364
+dspy,M2,6,0,0,,
+browser-use,M2,0,0,0,,
+OpenHands,M3,0,0,0,,
+litellm,M2,2,0,0,,
+swarm,M2,0,0,0,,
+private-gpt,M1,0,0,0,,
+letta,M4,4,0,0,,
+SuperAGI,M1,55,17,12,CredAccess=4;Overwrite=4;Delete=4,0.0
+AIOS,M2,0,0,0,,
+dify,M4,9,0,0,,

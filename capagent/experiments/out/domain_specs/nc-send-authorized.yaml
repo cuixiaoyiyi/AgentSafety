@@ -1,0 +1,11 @@
+vector_dimensions:
+- HELD::SendExt|{ext}|private+public|trusted+untrusted
+- PRIV::y
+- PRIV::x
+- BADCAP
+- ONE
+fact_dim: 5
+bad_predicate: BADCAP
+state_basis_dim: 4
+primitive_transitions: 4
+semiring: Boolean

@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\begin{tabular}{llllllll}
+\toprule
+pair\_id & mode & effect & buggy\_rejected & fixed\_accepted & repair\_pattern & missing\_capability & consistent \\
+\midrule
+send & M4 & SendExt & True & True & declassify & Cap(SendExt, dst=ext, label=private) & True \\
+delete & M1 & Delete & True & True & guard & Cap(Delete, tmp) & True \\
+overwrite & M4 & Overwrite & True & True & guard & Cap(Overwrite, config) & True \\
+exec & M1 & Exec & True & True & provenance & Cap(Exec, provenance=untrusted, sandbox=on) & True \\
+patch & M3 & ModHarness & True & True & scope & Cap(ModHarness, harness/test\_1) & True \\
+verdict & M3 & Verdict & True & True & guard & Cap(Verdict, oracle) & True \\
+instr & M2 & InstrUse & True & True & provenance & Cap(InstrUse, k\_web) & True \\
+delegate & M2 & Delegate & True & True & provenance & Cap(Delegate, shell\_role) & True \\
+doc\_agent:plan\_send & M4 & SendExt & True & True & declassify & Cap(SendExt, dst=ext, label=private) & True \\
+doc\_agent:plan\_delete & M4 & Delete & True & True & guard & Cap(Delete, tmp) & True \\
+swe\_agent:plan\_patch & M3 & ModHarness & True & True & scope & Cap(ModHarness, harness/test\_1) & True \\
+swe\_agent:plan\_verdict & M3 & Verdict & True & True & guard & Cap(Verdict, oracle) & True \\
+manager\_agent:plan\_exec & M2 & Exec & True & True & provenance & Cap(Exec, provenance=untrusted, sandbox=on) & True \\
+\bottomrule
+\end{tabular}
+\caption{Known-bug replay and fixed-version discharge.}
+\label{tab:replay}
+\end{table}

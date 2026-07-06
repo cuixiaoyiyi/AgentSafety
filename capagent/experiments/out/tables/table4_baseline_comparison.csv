@@ -1,0 +1,7 @@
+method,tp,fp,fn,tn,precision,recall,accuracy,expected_limitation
+CapAgent,16,0,0,17,1.0,1.0,1.0,target method (effect+resource+provenance)
+sink_only,16,17,0,0,0.485,1.0,0.485,over-reports; no authorization notion
+allowlist,16,17,0,0,0.485,1.0,0.485,ignores resource and provenance
+guard_dominator,14,3,2,14,0.824,0.875,0.848,coarse scoped capabilities
+generic_reach,16,3,0,14,0.842,1.0,0.909,kind-only; no scope/label/provenance
+taint_to_sink,9,1,7,16,0.9,0.562,0.758,misses pure-authorization bugs

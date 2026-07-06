@@ -1,0 +1,2 @@
+c := require(Cap(Verdict, {oracle}, L={'private', 'public'}, Q={'trusted'}));
+emit_verdict(pass)

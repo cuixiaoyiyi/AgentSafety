@@ -1,0 +1,2 @@
+m := memread(k_web_untrusted);
+use_as_instruction(k_web, m)

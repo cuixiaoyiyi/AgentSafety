@@ -1,0 +1,2 @@
+c := require(Cap(ModifyRepo, {task/*}, L={'private', 'public'}, Q={'untrusted', 'trusted'}));
+apply_patch(task/module_b)

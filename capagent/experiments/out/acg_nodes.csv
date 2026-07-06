@@ -1,0 +1,48 @@
+case,node,kind,label,tool,effect,high_impact
+doc_agent/plan_send_buggy,init,Init,initial state,,,False
+doc_agent/plan_send_buggy,too1,ToolCall,read_file,read_file,Read,False
+doc_agent/plan_send_buggy,too2,ToolCall,summarize,summarize,Transform,False
+doc_agent/plan_send_buggy,too3,HighImpactSink,send_email,send_email,SendExt,True
+doc_agent/plan_send_fixed,init,Init,initial state,,,False
+doc_agent/plan_send_fixed,too1,ToolCall,read_file,read_file,Read,False
+doc_agent/plan_send_fixed,too2,ToolCall,summarize,summarize,Transform,False
+doc_agent/plan_send_fixed,too3,ToolCall,redact,redact,Declassify,False
+doc_agent/plan_send_fixed,too4,HighImpactSink,send_email,send_email,SendExt,True
+doc_agent/plan_delete_buggy,init,Init,initial state,,,False
+doc_agent/plan_delete_buggy,too1,HighImpactSink,delete_file,delete_file,Delete,True
+doc_agent/plan_delete_fixed,init,Init,initial state,,,False
+doc_agent/plan_delete_fixed,gra1,CapabilityGrant,require Delete,,,False
+doc_agent/plan_delete_fixed,too2,HighImpactSink,delete_file,delete_file,Delete,True
+doc_agent/plan_send_choice,init,Init,initial state,,,False
+doc_agent/plan_send_choice,too1,ToolCall,read_file,read_file,Read,False
+doc_agent/plan_send_choice,too2,ToolCall,summarize,summarize,Transform,False
+doc_agent/plan_send_choice,llm3,LLMChoice,model choice,,,False
+doc_agent/plan_send_choice,mrg4,Merge,merge,,,False
+doc_agent/plan_send_choice,too5,ToolCall,redact,redact,Declassify,False
+doc_agent/plan_send_choice,too6,HighImpactSink,send_email,send_email,SendExt,True
+doc_agent/plan_send_choice,too7,HighImpactSink,send_email,send_email,SendExt,True
+swe_agent/plan_patch_buggy,init,Init,initial state,,,False
+swe_agent/plan_patch_buggy,gra1,CapabilityGrant,require ModifyRepo,,,False
+swe_agent/plan_patch_buggy,too2,HighImpactSink,apply_patch_harness,apply_patch_harness,ModHarness,True
+swe_agent/plan_patch_fixed,init,Init,initial state,,,False
+swe_agent/plan_patch_fixed,gra1,CapabilityGrant,require ModifyRepo,,,False
+swe_agent/plan_patch_fixed,too2,HighImpactSink,apply_patch,apply_patch,ModifyRepo,True
+swe_agent/plan_verdict_buggy,init,Init,initial state,,,False
+swe_agent/plan_verdict_buggy,too1,HighImpactSink,emit_verdict,emit_verdict,Verdict,True
+swe_agent/plan_verdict_fixed,init,Init,initial state,,,False
+swe_agent/plan_verdict_fixed,gra1,CapabilityGrant,require Verdict,,,False
+swe_agent/plan_verdict_fixed,too2,HighImpactSink,emit_verdict,emit_verdict,Verdict,True
+manager_agent/plan_exec_buggy,init,Init,initial state,,,False
+manager_agent/plan_exec_buggy,mr1,MemoryRead,memread k_web,,,False
+manager_agent/plan_exec_buggy,too2,HighImpactSink,shell_exec,shell_exec,Exec,True
+manager_agent/plan_exec_fixed,init,Init,initial state,,,False
+manager_agent/plan_exec_fixed,mr1,MemoryRead,memread k_web,,,False
+manager_agent/plan_exec_fixed,too2,ToolCall,validate_provenance,validate_provenance,Transform,False
+manager_agent/plan_exec_fixed,gra3,CapabilityGrant,require Exec,,,False
+manager_agent/plan_exec_fixed,too4,HighImpactSink,shell_exec,shell_exec,Exec,True
+manager_agent/plan_dispatch_buggy,init,Init,initial state,,,False
+manager_agent/plan_dispatch_buggy,mr1,MemoryRead,memread k_web,,,False
+manager_agent/plan_dispatch_buggy,too2,HighImpactSink,dispatch,dispatch,Delegate,True
+manager_agent/plan_instr_buggy,init,Init,initial state,,,False
+manager_agent/plan_instr_buggy,mr1,MemoryRead,memread k_web,,,False
+manager_agent/plan_instr_buggy,too2,HighImpactSink,use_as_instruction,use_as_instruction,InstrUse,True

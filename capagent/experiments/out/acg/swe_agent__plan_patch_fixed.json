@@ -1,0 +1,71 @@
+{
+  "name": "plan_patch_fixed",
+  "entry": "init",
+  "exits": [
+    "too2"
+  ],
+  "nodes": [
+    {
+      "id": "init",
+      "kind": "Init",
+      "label": "initial state",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": ""
+    },
+    {
+      "id": "gra1",
+      "kind": "CapabilityGrant",
+      "label": "require ModifyRepo",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": {
+        "kind": "ModifyRepo",
+        "region": [
+          "task/"
+        ],
+        "labels": null,
+        "provs": null
+      },
+      "untrusted": false,
+      "site": "L65"
+    },
+    {
+      "id": "too2",
+      "kind": "HighImpactSink",
+      "label": "apply_patch",
+      "tool": "apply_patch",
+      "args": [
+        "task/module_a",
+        "delta"
+      ],
+      "result": null,
+      "effect_kind": "ModifyRepo",
+      "high_impact": true,
+      "cap": null,
+      "untrusted": false,
+      "site": "L66"
+    }
+  ],
+  "edges": [
+    {
+      "src": "gra1",
+      "dst": "too2",
+      "kind": "control"
+    },
+    {
+      "src": "init",
+      "dst": "gra1",
+      "kind": "control"
+    }
+  ],
+  "warnings": []
+}

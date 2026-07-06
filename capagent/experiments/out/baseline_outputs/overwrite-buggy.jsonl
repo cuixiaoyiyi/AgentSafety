@@ -1,0 +1,5 @@
+{"baseline": "sink_only", "safe": false, "warnings": ["high-impact API used: write_file (Overwrite)"]}
+{"baseline": "allowlist", "safe": false, "warnings": ["tool not on allowlist: write_file"]}
+{"baseline": "guard_dominator", "safe": false, "warnings": ["high-impact sink with no dominating guard"]}
+{"baseline": "generic_reach", "safe": false, "warnings": ["sink write_file (Overwrite) has no same-kind grant"]}
+{"baseline": "taint_to_sink", "safe": true, "warnings": []}

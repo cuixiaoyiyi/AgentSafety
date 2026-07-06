@@ -1,0 +1,275 @@
+[open-interpreter:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[open-interpreter:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[smolagents:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[smolagents:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[smolagents:harness-overlap (buggy)] UNSAFE
+Unsafe path:
+  -> grant(ModifyRepo)
+  -> call(apply_patch_harness)
+Missing capability:
+  Cap(ModHarness, harness/test_patch)
+Triggered bad component:
+  BadCap
+Evidence: repo.apply(delta) over harness paths
+
+[smolagents:harness-overlap (fixed)] SAFE: bad-capability projection is zero over 2 reachable abstract states.
+
+[SWE-bench:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[SWE-bench:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[SWE-bench:harness-overlap (buggy)] UNSAFE
+Unsafe path:
+  -> grant(ModifyRepo)
+  -> call(apply_patch_harness)
+Missing capability:
+  Cap(ModHarness, harness/test_patch)
+Triggered bad component:
+  BadCap
+Evidence: repo.apply(delta) over harness paths
+
+[SWE-bench:harness-overlap (fixed)] SAFE: bad-capability projection is zero over 2 reachable abstract states.
+
+[MetaGPT:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[MetaGPT:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[MetaGPT:delegate-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(peer_message)
+  -> call(dispatch)
+Missing capability:
+  Cap(Delegate, engineer)
+Triggered bad component:
+  BadCap
+Evidence: manager.run(role, task)
+
+[MetaGPT:delegate-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[agno:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[agno:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[dspy:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[dspy:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[dspy:delegate-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(peer_message)
+  -> call(dispatch)
+Missing capability:
+  Cap(Delegate, engineer)
+Triggered bad component:
+  BadCap
+Evidence: manager.run(role, task)
+
+[dspy:delegate-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[browser-use:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[browser-use:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[browser-use:delegate-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(peer_message)
+  -> call(dispatch)
+Missing capability:
+  Cap(Delegate, engineer)
+Triggered bad component:
+  BadCap
+Evidence: manager.run(role, task)
+
+[browser-use:delegate-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[OpenHands:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[OpenHands:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[OpenHands:harness-overlap (buggy)] UNSAFE
+Unsafe path:
+  -> grant(ModifyRepo)
+  -> call(apply_patch_harness)
+Missing capability:
+  Cap(ModHarness, harness/test_patch)
+Triggered bad component:
+  BadCap
+Evidence: repo.apply(delta) over harness paths
+
+[OpenHands:harness-overlap (fixed)] SAFE: bad-capability projection is zero over 2 reachable abstract states.
+
+[litellm:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[litellm:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[litellm:delegate-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(peer_message)
+  -> call(dispatch)
+Missing capability:
+  Cap(Delegate, engineer)
+Triggered bad component:
+  BadCap
+Evidence: manager.run(role, task)
+
+[litellm:delegate-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[swarm:delegate-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(peer_message)
+  -> call(dispatch)
+Missing capability:
+  Cap(Delegate, engineer)
+Triggered bad component:
+  BadCap
+Evidence: manager.run(role, task)
+
+[swarm:delegate-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[private-gpt:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[private-gpt:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[letta:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[letta:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[SuperAGI:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[SuperAGI:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[AIOS:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[AIOS:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[AIOS:delegate-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(peer_message)
+  -> call(dispatch)
+Missing capability:
+  Cap(Delegate, engineer)
+Triggered bad component:
+  BadCap
+Evidence: manager.run(role, task)
+
+[AIOS:delegate-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.
+
+[dify:exec-untrusted (buggy)] UNSAFE
+Unsafe path:
+  -> memread(model_output)
+  -> call(shell_exec)
+Missing capability:
+  Cap(Exec, provenance=untrusted, sandbox=on)
+Triggered bad component:
+  BadCap
+Evidence: subprocess.run(cmd)
+
+[dify:exec-untrusted (fixed)] SAFE: bad-capability projection is zero over 3 reachable abstract states.

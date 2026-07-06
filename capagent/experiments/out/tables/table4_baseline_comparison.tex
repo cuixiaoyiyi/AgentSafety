@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\begin{tabular}{lllllllll}
+\toprule
+method & tp & fp & fn & tn & precision & recall & accuracy & expected\_limitation \\
+\midrule
+CapAgent & 16 & 0 & 0 & 17 & 1.0 & 1.0 & 1.0 & target method (effect+resource+provenance) \\
+sink\_only & 16 & 17 & 0 & 0 & 0.485 & 1.0 & 0.485 & over-reports; no authorization notion \\
+allowlist & 16 & 17 & 0 & 0 & 0.485 & 1.0 & 0.485 & ignores resource and provenance \\
+guard\_dominator & 14 & 3 & 2 & 14 & 0.824 & 0.875 & 0.848 & coarse scoped capabilities \\
+generic\_reach & 16 & 3 & 0 & 14 & 0.842 & 1.0 & 0.909 & kind-only; no scope/label/provenance \\
+taint\_to\_sink & 9 & 1 & 7 & 16 & 0.9 & 0.562 & 0.758 & misses pure-authorization bugs \\
+\bottomrule
+\end{tabular}
+\caption{Baseline comparison by verdict (positive = flagged unsafe).}
+\label{tab:baselines}
+\end{table}

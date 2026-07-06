@@ -1,0 +1,53 @@
+version: 1
+rules:
+- effect: Delete(resource)
+  requires: Cap(Delete, R, _, Q) with resource in R
+  evidence:
+  - kind: default_policy
+    note: destructive operations require explicit confirmation / authorization.
+- effect: Overwrite(resource)
+  requires: Cap(Overwrite, R, _, Q) with resource in R
+  evidence:
+  - kind: default_policy
+    note: writes require a scoped write capability for the target region.
+- effect: SendExt(data, dst)
+  requires: Cap(SendExt, R, label(data), Q)
+  evidence:
+  - kind: policy
+    note: external sends of private/untrusted data require declassification or send
+      authorization.
+- effect: Exec(cmd)
+  requires: Cap(Exec, R, _, Q_trusted) with sandbox
+  evidence:
+  - kind: code_pattern
+    note: subprocess/eval/exec sinks require trusted provenance and a sandbox scope.
+- effect: ModifyRepo(paths)
+  requires: Cap(ModifyRepo, R_task, _, Q_trusted)
+  evidence:
+  - kind: policy
+    note: repository edits are scoped to task paths.
+- effect: ModHarness(paths)
+  requires: Cap(ModHarness, R_harness, _, Q_trusted)
+  evidence:
+  - kind: policy
+    note: harness/oracle paths require a distinct harness-write capability.
+- effect: Verdict
+  requires: Cap(Verdict, R, _, Trusted)
+  evidence:
+  - kind: policy
+    note: verdict emission requires trusted, uncontaminated oracle state.
+- effect: InstrUse(key)
+  requires: Cap(TrustMem, R, _, Trusted)
+  evidence:
+  - kind: policy
+    note: memory used as an instruction source must be provenance-trusted.
+- effect: Delegate(role)
+  requires: Cap(Delegate, R_role, _, Q_trusted)
+  evidence:
+  - kind: policy
+    note: privilege crossing to a high-role executor requires a delegation capability.
+- effect: CredAccess(store)
+  requires: Cap(CredAccess, R, _, Q_trusted)
+  evidence:
+  - kind: default_policy
+    note: credential access requires an explicit credential capability.

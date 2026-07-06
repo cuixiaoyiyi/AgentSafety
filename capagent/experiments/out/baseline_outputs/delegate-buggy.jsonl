@@ -1,0 +1,5 @@
+{"baseline": "sink_only", "safe": false, "warnings": ["high-impact API used: dispatch (Delegate)"]}
+{"baseline": "allowlist", "safe": false, "warnings": ["tool not on allowlist: dispatch"]}
+{"baseline": "guard_dominator", "safe": false, "warnings": ["high-impact sink with no dominating guard"]}
+{"baseline": "generic_reach", "safe": false, "warnings": ["sink dispatch (Delegate) has no same-kind grant"]}
+{"baseline": "taint_to_sink", "safe": false, "warnings": ["untrusted/private data reaches a high-impact sink"]}

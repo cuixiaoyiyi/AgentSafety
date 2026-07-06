@@ -1,0 +1,24 @@
+pair_id,repo,mode,effect,evidence_site,buggy_rejected,fixed_accepted,repair_pattern,missing_capability,consistent
+open-interpreter:exec-untrusted,open-interpreter,M1,Exec,open-interpreter/codex-rs/windows-sandbox-rs/sandbox_smoketests.py:95,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+smolagents:exec-untrusted,smolagents,M3,Exec,smolagents/src/smolagents/tools.py:575,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+smolagents:harness-overlap,smolagents,M3,ModHarness,smolagents/tests/test_all_docs.py:76,True,True,scope,"Cap(ModHarness, harness/test_patch)",True
+SWE-bench:exec-untrusted,SWE-bench,M3,Exec,SWE-bench/swebench/inference/run_live.py:113,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+SWE-bench:harness-overlap,SWE-bench,M3,ModHarness,SWE-bench/swebench/harness/docker_utils.py:35,True,True,scope,"Cap(ModHarness, harness/test_patch)",True
+MetaGPT:exec-untrusted,MetaGPT,M2,Exec,MetaGPT/metagpt/repo_parser.py:731,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+MetaGPT:delegate-untrusted,MetaGPT,M2,Delegate,MetaGPT/metagpt/repo_parser.py:731,True,True,provenance,"Cap(Delegate, engineer)",True
+agno:exec-untrusted,agno,M1,Exec,agno/libs/agno/agno/utils/shell.py:12,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+dspy:exec-untrusted,dspy,M2,Exec,dspy/dspy/teleprompt/infer_rules.py:28,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+dspy:delegate-untrusted,dspy,M2,Delegate,dspy/dspy/teleprompt/infer_rules.py:28,True,True,provenance,"Cap(Delegate, engineer)",True
+browser-use:exec-untrusted,browser-use,M2,Exec,browser-use/browser_use/cli.py:127,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+browser-use:delegate-untrusted,browser-use,M2,Delegate,browser-use/browser_use/cli.py:127,True,True,provenance,"Cap(Delegate, engineer)",True
+OpenHands:exec-untrusted,OpenHands,M3,Exec,OpenHands/openhands/app_server/utils/git.py:14,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+OpenHands:harness-overlap,OpenHands,M3,ModHarness,OpenHands/tests/unit/test_binaryornot_dependency.py:6,True,True,scope,"Cap(ModHarness, harness/test_patch)",True
+litellm:exec-untrusted,litellm,M2,Exec,litellm/litellm/proxy/prisma_migration.py:18,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+litellm:delegate-untrusted,litellm,M2,Delegate,litellm/litellm/proxy/prisma_migration.py:18,True,True,provenance,"Cap(Delegate, engineer)",True
+swarm:delegate-untrusted,swarm,M2,Delegate,swarm/examples/airline/evals/eval_utils.py:90,True,True,provenance,"Cap(Delegate, engineer)",True
+private-gpt:exec-untrusted,private-gpt,M1,Exec,private-gpt/private_gpt/cli/commands/run.py:71,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+letta:exec-untrusted,letta,M4,Exec,letta/sandbox/node_server.py:17,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+SuperAGI:exec-untrusted,SuperAGI,M1,Exec,SuperAGI/run_gui.py:16,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+AIOS:exec-untrusted,AIOS,M2,Exec,AIOS/aios/tool/manager.py:38,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True
+AIOS:delegate-untrusted,AIOS,M2,Delegate,AIOS/aios/tool/manager.py:38,True,True,provenance,"Cap(Delegate, engineer)",True
+dify:exec-untrusted,dify,M4,Exec,dify/scripts/check_no_new_getattr.py:75,True,True,provenance,"Cap(Exec, provenance=untrusted, sandbox=on)",True

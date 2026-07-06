@@ -1,0 +1,112 @@
+{
+  "name": "plan_exec_fixed",
+  "entry": "init",
+  "exits": [
+    "too4"
+  ],
+  "nodes": [
+    {
+      "id": "init",
+      "kind": "Init",
+      "label": "initial state",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": ""
+    },
+    {
+      "id": "mr1",
+      "kind": "MemoryRead",
+      "label": "memread k_web",
+      "tool": "",
+      "args": [
+        "k_web"
+      ],
+      "result": "cmd",
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": true,
+      "site": "L63"
+    },
+    {
+      "id": "too2",
+      "kind": "ToolCall",
+      "label": "validate_provenance",
+      "tool": "validate_provenance",
+      "args": [
+        "cmd"
+      ],
+      "result": "cmd2",
+      "effect_kind": "Transform",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": "L64"
+    },
+    {
+      "id": "gra3",
+      "kind": "CapabilityGrant",
+      "label": "require Exec",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": {
+        "kind": "Exec",
+        "region": [
+          "sandbox"
+        ],
+        "labels": null,
+        "provs": [
+          "trusted"
+        ]
+      },
+      "untrusted": false,
+      "site": "L65"
+    },
+    {
+      "id": "too4",
+      "kind": "HighImpactSink",
+      "label": "shell_exec",
+      "tool": "shell_exec",
+      "args": [
+        "cmd2"
+      ],
+      "result": null,
+      "effect_kind": "Exec",
+      "high_impact": true,
+      "cap": null,
+      "untrusted": false,
+      "site": "L66"
+    }
+  ],
+  "edges": [
+    {
+      "src": "mr1",
+      "dst": "too2",
+      "kind": "control"
+    },
+    {
+      "src": "too2",
+      "dst": "gra3",
+      "kind": "control"
+    },
+    {
+      "src": "gra3",
+      "dst": "too4",
+      "kind": "control"
+    },
+    {
+      "src": "init",
+      "dst": "mr1",
+      "kind": "control"
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,17 @@
+case,mode,effect,impact,pair_id,fixed_status
+send-buggy,M4,SendExt,unsafe,send,has_fixed
+delete-buggy,M1,Delete,unsafe,delete,has_fixed
+overwrite-buggy,M4,Overwrite,unsafe,overwrite,has_fixed
+exec-buggy,M1,Exec,unsafe,exec,has_fixed
+patch-buggy,M3,ModHarness,unsafe,patch,has_fixed
+verdict-buggy,M3,Verdict,unsafe,verdict,has_fixed
+instr-buggy,M2,InstrUse,unsafe,instr,has_fixed
+delegate-buggy,M2,Delegate,unsafe,delegate,has_fixed
+doc_agent/plan_send_buggy,M4,SendExt,unsafe,doc_agent:plan_send,has_fixed
+doc_agent/plan_delete_buggy,M4,Delete,unsafe,doc_agent:plan_delete,has_fixed
+doc_agent/plan_send_choice,M4,SendExt,unsafe,doc_agent:plan_send_choice,has_fixed
+swe_agent/plan_patch_buggy,M3,ModHarness,unsafe,swe_agent:plan_patch,has_fixed
+swe_agent/plan_verdict_buggy,M3,Verdict,unsafe,swe_agent:plan_verdict,has_fixed
+manager_agent/plan_exec_buggy,M2,Exec,unsafe,manager_agent:plan_exec,has_fixed
+manager_agent/plan_dispatch_buggy,M2,Delegate,unsafe,manager_agent:plan_dispatch,has_fixed
+manager_agent/plan_instr_buggy,M2,InstrUse,unsafe,manager_agent:plan_instr,has_fixed

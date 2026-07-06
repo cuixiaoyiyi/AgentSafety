@@ -1,0 +1,10 @@
+{"effect": "Delete(resource)", "requires": "Cap(Delete, R, _, Q) with resource in R", "evidence_kind": "default_policy", "note": "destructive operations require explicit confirmation / authorization.", "status": "accepted"}
+{"effect": "Overwrite(resource)", "requires": "Cap(Overwrite, R, _, Q) with resource in R", "evidence_kind": "default_policy", "note": "writes require a scoped write capability for the target region.", "status": "accepted"}
+{"effect": "SendExt(data, dst)", "requires": "Cap(SendExt, R, label(data), Q)", "evidence_kind": "policy", "note": "external sends of private/untrusted data require declassification or send authorization.", "status": "accepted"}
+{"effect": "Exec(cmd)", "requires": "Cap(Exec, R, _, Q_trusted) with sandbox", "evidence_kind": "code_pattern", "note": "subprocess/eval/exec sinks require trusted provenance and a sandbox scope.", "status": "accepted"}
+{"effect": "ModifyRepo(paths)", "requires": "Cap(ModifyRepo, R_task, _, Q_trusted)", "evidence_kind": "policy", "note": "repository edits are scoped to task paths.", "status": "accepted"}
+{"effect": "ModHarness(paths)", "requires": "Cap(ModHarness, R_harness, _, Q_trusted)", "evidence_kind": "policy", "note": "harness/oracle paths require a distinct harness-write capability.", "status": "accepted"}
+{"effect": "Verdict", "requires": "Cap(Verdict, R, _, Trusted)", "evidence_kind": "policy", "note": "verdict emission requires trusted, uncontaminated oracle state.", "status": "accepted"}
+{"effect": "InstrUse(key)", "requires": "Cap(TrustMem, R, _, Trusted)", "evidence_kind": "policy", "note": "memory used as an instruction source must be provenance-trusted.", "status": "accepted"}
+{"effect": "Delegate(role)", "requires": "Cap(Delegate, R_role, _, Q_trusted)", "evidence_kind": "policy", "note": "privilege crossing to a high-role executor requires a delegation capability.", "status": "accepted"}
+{"effect": "CredAccess(store)", "requires": "Cap(CredAccess, R, _, Q_trusted)", "evidence_kind": "default_policy", "note": "credential access requires an explicit credential capability.", "status": "accepted"}

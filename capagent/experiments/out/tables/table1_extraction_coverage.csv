@@ -1,0 +1,4 @@
+project,tools,sinks,resolved,unresolved,guards,acg_warnings,contract_coverage
+doc_agent,6,3,6,0,1,0,100%
+swe_agent,6,6,6,0,3,0,100%
+manager_agent,4,3,4,1,1,0,80%

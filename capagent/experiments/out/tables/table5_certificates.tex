@@ -1,0 +1,44 @@
+\begin{table}[t]
+\centering
+\begin{tabular}{llllllll}
+\toprule
+case & subject & matrix\_dim & nnz & fact\_dim & closure\_iters & check\_time\_ms & safe \\
+\midrule
+send-buggy & kernel & 4 & 3 & 4 & 4 & 0.561 & False \\
+send-fixed & kernel & 3 & 3 & 4 & 3 & 0.242 & True \\
+delete-buggy & kernel & 2 & 1 & 2 & 2 & 0.18 & False \\
+delete-fixed & kernel & 2 & 2 & 3 & 2 & 0.266 & True \\
+overwrite-buggy & kernel & 2 & 1 & 2 & 2 & 0.224 & False \\
+overwrite-fixed & kernel & 2 & 2 & 3 & 2 & 0.258 & True \\
+exec-buggy & kernel & 3 & 2 & 3 & 3 & 0.383 & False \\
+exec-fixed & kernel & 3 & 4 & 4 & 3 & 0.343 & True \\
+patch-buggy & kernel & 3 & 2 & 3 & 3 & 0.248 & False \\
+patch-fixed & kernel & 2 & 2 & 3 & 2 & 0.236 & True \\
+verdict-buggy & kernel & 2 & 1 & 2 & 2 & 0.154 & False \\
+verdict-fixed & kernel & 2 & 2 & 3 & 2 & 0.166 & True \\
+instr-buggy & kernel & 3 & 2 & 3 & 3 & 0.162 & False \\
+instr-fixed & kernel & 3 & 4 & 4 & 3 & 0.213 & True \\
+delegate-buggy & kernel & 3 & 2 & 3 & 3 & 0.23 & False \\
+delegate-fixed & kernel & 3 & 4 & 4 & 3 & 0.194 & True \\
+nc-send-public & kernel & 1 & 1 & 2 & 1 & 0.177 & True \\
+nc-exec-trusted & kernel & 2 & 2 & 3 & 2 & 0.164 & True \\
+nc-patch-task & kernel & 2 & 2 & 3 & 2 & 0.188 & True \\
+nc-send-authorized & kernel & 4 & 4 & 5 & 4 & 0.191 & True \\
+doc\_agent/plan\_send\_buggy & scaffold & 4 & 3 & 4 & 4 & 0.185 & False \\
+doc\_agent/plan\_send\_fixed & scaffold & 3 & 3 & 4 & 3 & 0.183 & True \\
+doc\_agent/plan\_delete\_buggy & scaffold & 2 & 1 & 2 & 2 & 0.165 & False \\
+doc\_agent/plan\_delete\_fixed & scaffold & 2 & 2 & 3 & 2 & 0.26 & True \\
+doc\_agent/plan\_send\_choice & scaffold & 4 & 4 & 4 & 4 & 0.3 & False \\
+swe\_agent/plan\_patch\_buggy & scaffold & 3 & 2 & 3 & 3 & 0.343 & False \\
+swe\_agent/plan\_patch\_fixed & scaffold & 2 & 2 & 3 & 2 & 0.278 & True \\
+swe\_agent/plan\_verdict\_buggy & scaffold & 2 & 1 & 2 & 2 & 0.154 & False \\
+swe\_agent/plan\_verdict\_fixed & scaffold & 2 & 2 & 3 & 2 & 0.167 & True \\
+manager\_agent/plan\_exec\_buggy & scaffold & 3 & 2 & 3 & 3 & 0.174 & False \\
+manager\_agent/plan\_exec\_fixed & scaffold & 3 & 4 & 4 & 3 & 0.185 & True \\
+manager\_agent/plan\_dispatch\_buggy & scaffold & 3 & 2 & 3 & 3 & 0.161 & False \\
+manager\_agent/plan\_instr\_buggy & scaffold & 3 & 2 & 3 & 3 & 0.193 & False \\
+\bottomrule
+\end{tabular}
+\caption{Matrix / certificate size and checking time.}
+\label{tab:certs}
+\end{table}

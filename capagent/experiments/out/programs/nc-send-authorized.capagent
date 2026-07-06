@@ -1,0 +1,4 @@
+x := read_file(secret);
+y := summarize(x);
+c := require(Cap(SendExt, {ext}, L={'private', 'public'}, Q={'untrusted', 'trusted'}));
+send_email(ext, y)

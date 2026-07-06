@@ -1,0 +1,5 @@
+{"baseline": "sink_only", "safe": false, "warnings": ["high-impact API used: send_email (SendExt)"]}
+{"baseline": "allowlist", "safe": false, "warnings": ["tool not on allowlist: send_email"]}
+{"baseline": "guard_dominator", "safe": false, "warnings": ["high-impact sink with no dominating guard"]}
+{"baseline": "generic_reach", "safe": false, "warnings": ["sink send_email (SendExt) has no same-kind grant"]}
+{"baseline": "taint_to_sink", "safe": false, "warnings": ["untrusted/private data reaches a high-impact sink"]}

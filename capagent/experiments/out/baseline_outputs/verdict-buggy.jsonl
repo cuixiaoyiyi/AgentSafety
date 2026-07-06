@@ -1,0 +1,5 @@
+{"baseline": "sink_only", "safe": false, "warnings": ["high-impact API used: emit_verdict (Verdict)"]}
+{"baseline": "allowlist", "safe": false, "warnings": ["tool not on allowlist: emit_verdict"]}
+{"baseline": "guard_dominator", "safe": false, "warnings": ["high-impact sink with no dominating guard"]}
+{"baseline": "generic_reach", "safe": false, "warnings": ["sink emit_verdict (Verdict) has no same-kind grant"]}
+{"baseline": "taint_to_sink", "safe": true, "warnings": []}

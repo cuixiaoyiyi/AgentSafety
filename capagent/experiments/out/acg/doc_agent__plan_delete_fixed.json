@@ -1,0 +1,70 @@
+{
+  "name": "plan_delete_fixed",
+  "entry": "init",
+  "exits": [
+    "too2"
+  ],
+  "nodes": [
+    {
+      "id": "init",
+      "kind": "Init",
+      "label": "initial state",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": ""
+    },
+    {
+      "id": "gra1",
+      "kind": "CapabilityGrant",
+      "label": "require Delete",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": {
+        "kind": "Delete",
+        "region": [
+          "tmp"
+        ],
+        "labels": null,
+        "provs": null
+      },
+      "untrusted": false,
+      "site": "L81"
+    },
+    {
+      "id": "too2",
+      "kind": "HighImpactSink",
+      "label": "delete_file",
+      "tool": "delete_file",
+      "args": [
+        "tmp"
+      ],
+      "result": null,
+      "effect_kind": "Delete",
+      "high_impact": true,
+      "cap": null,
+      "untrusted": false,
+      "site": "L82"
+    }
+  ],
+  "edges": [
+    {
+      "src": "gra1",
+      "dst": "too2",
+      "kind": "control"
+    },
+    {
+      "src": "init",
+      "dst": "gra1",
+      "kind": "control"
+    }
+  ],
+  "warnings": []
+}

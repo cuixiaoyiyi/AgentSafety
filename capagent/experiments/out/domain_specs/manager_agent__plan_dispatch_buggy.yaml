@@ -1,0 +1,9 @@
+vector_dimensions:
+- ONE
+- UNTR::task
+- BADCAP
+fact_dim: 3
+bad_predicate: BADCAP
+state_basis_dim: 3
+primitive_transitions: 2
+semiring: Boolean

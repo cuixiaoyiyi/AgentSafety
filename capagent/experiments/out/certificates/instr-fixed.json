@@ -1,0 +1,11 @@
+{
+  "safe": true,
+  "matrix_dim": 3,
+  "nnz": 4,
+  "fact_dim": 4,
+  "closure_iterations": 3,
+  "reachable_states": 3,
+  "bad_reachable_states": 0,
+  "check_time_s": 0.000213,
+  "bad_projection_zero": true
+}

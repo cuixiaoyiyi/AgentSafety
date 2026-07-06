@@ -1,0 +1,86 @@
+{
+  "name": "plan_send_buggy",
+  "entry": "init",
+  "exits": [
+    "too3"
+  ],
+  "nodes": [
+    {
+      "id": "init",
+      "kind": "Init",
+      "label": "initial state",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": ""
+    },
+    {
+      "id": "too1",
+      "kind": "ToolCall",
+      "label": "read_file",
+      "tool": "read_file",
+      "args": [
+        "secret"
+      ],
+      "result": "x",
+      "effect_kind": "Read",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": "L64"
+    },
+    {
+      "id": "too2",
+      "kind": "ToolCall",
+      "label": "summarize",
+      "tool": "summarize",
+      "args": [
+        "x"
+      ],
+      "result": "y",
+      "effect_kind": "Transform",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": "L65"
+    },
+    {
+      "id": "too3",
+      "kind": "HighImpactSink",
+      "label": "send_email",
+      "tool": "send_email",
+      "args": [
+        "ext",
+        "y"
+      ],
+      "result": null,
+      "effect_kind": "SendExt",
+      "high_impact": true,
+      "cap": null,
+      "untrusted": false,
+      "site": "L66"
+    }
+  ],
+  "edges": [
+    {
+      "src": "too1",
+      "dst": "too2",
+      "kind": "control"
+    },
+    {
+      "src": "too2",
+      "dst": "too3",
+      "kind": "control"
+    },
+    {
+      "src": "init",
+      "dst": "too1",
+      "kind": "control"
+    }
+  ],
+  "warnings": []
+}

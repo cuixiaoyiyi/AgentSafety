@@ -1,0 +1,5 @@
+{"project": "doc_agent", "site": "doc_agent:81", "func": "plan_delete_fixed", "grant_call": "require", "cap": {"kind": "Delete", "region": ["tmp"], "labels": null, "provs": null}, "evidence": ["require(...)"]}
+{"project": "swe_agent", "site": "swe_agent:60", "func": "plan_patch_buggy", "grant_call": "require", "cap": {"kind": "ModifyRepo", "region": ["task/"], "labels": null, "provs": null}, "evidence": ["require(...)"]}
+{"project": "swe_agent", "site": "swe_agent:65", "func": "plan_patch_fixed", "grant_call": "require", "cap": {"kind": "ModifyRepo", "region": ["task/"], "labels": null, "provs": null}, "evidence": ["require(...)"]}
+{"project": "swe_agent", "site": "swe_agent:74", "func": "plan_verdict_fixed", "grant_call": "require", "cap": {"kind": "Verdict", "region": ["oracle"], "labels": null, "provs": ["trusted"]}, "evidence": ["require(...)"]}
+{"project": "manager_agent", "site": "manager_agent:65", "func": "plan_exec_fixed", "grant_call": "require", "cap": {"kind": "Exec", "region": ["sandbox"], "labels": null, "provs": ["trusted"]}, "evidence": ["require(...)"]}

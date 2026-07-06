@@ -1,0 +1,47 @@
+# High-impact effect taxonomy (caprule-miner output: effects.yaml).
+#
+# Each effect kind carries an abstract <kind, resource, label, provenance> tuple
+# at analysis time (paper Definition 1).  `high_impact` marks the sinks that the
+# capability-safety property constrains (paper Section 3.4, parameter High).
+version: 1
+effects:
+  - kind: Delete
+    high_impact: true
+    description: remove a file, database record, or workflow object.
+  - kind: Overwrite
+    high_impact: true
+    description: write/replace a file, object, or persistent resource.
+  - kind: SendExt
+    high_impact: conditional        # high-impact only for private/untrusted payloads
+    description: email, upload, webhook, or external HTTP post.
+  - kind: Exec
+    high_impact: true
+    description: shell command, eval, or subprocess execution.
+  - kind: ModifyRepo
+    high_impact: true
+    description: apply a patch to task-controlled repository paths.
+  - kind: ModHarness
+    high_impact: true
+    description: modify oracle / harness-controlled paths or a verdict parser.
+  - kind: Verdict
+    high_impact: true
+    description: emit or accept a benchmark verdict.
+  - kind: InstrUse
+    high_impact: true
+    description: consume untrusted memory as an instruction source.
+  - kind: Delegate
+    high_impact: true
+    description: invoke a high-privilege executor / role from low-privilege content.
+  - kind: CredAccess
+    high_impact: true
+    description: read a secret / credential store.
+  # Non high-impact effects (tracked only for data-flow).
+  - kind: Read
+    high_impact: false
+    description: read a resource.
+  - kind: Transform
+    high_impact: false
+    description: label-preserving transform (e.g. summarize).
+  - kind: Declassify
+    high_impact: false
+    description: label-clearing transform (e.g. redact / declassify).

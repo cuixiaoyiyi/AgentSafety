@@ -1,0 +1,10 @@
+vector_dimensions:
+- ONE
+- PRIV::y
+- PRIV::x
+- BADCAP
+fact_dim: 4
+bad_predicate: BADCAP
+state_basis_dim: 3
+primitive_transitions: 3
+semiring: Boolean

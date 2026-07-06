@@ -1,0 +1,7 @@
+x := read_file(secret);
+y := summarize(x);
+choice {
+  z := redact(y);
+  send_email(ext, z);
+  send_email(ext, y)
+}

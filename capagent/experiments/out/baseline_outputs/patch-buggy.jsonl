@@ -1,0 +1,5 @@
+{"baseline": "sink_only", "safe": false, "warnings": ["high-impact API used: apply_patch_harness (ModHarness)"]}
+{"baseline": "allowlist", "safe": false, "warnings": ["tool not on allowlist: apply_patch_harness"]}
+{"baseline": "guard_dominator", "safe": true, "warnings": []}
+{"baseline": "generic_reach", "safe": false, "warnings": ["sink apply_patch_harness (ModHarness) has no same-kind grant"]}
+{"baseline": "taint_to_sink", "safe": true, "warnings": []}

@@ -1,0 +1,10 @@
+vector_dimensions:
+- ONE
+- UNTR::m
+- HELD::InstrUse|{k_web}|private+public|trusted
+- BADCAP
+fact_dim: 4
+bad_predicate: BADCAP
+state_basis_dim: 3
+primitive_transitions: 4
+semiring: Boolean

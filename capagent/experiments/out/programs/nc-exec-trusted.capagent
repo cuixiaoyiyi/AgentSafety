@@ -1,0 +1,2 @@
+c := require(Cap(Exec, {sandbox}, L={'private', 'public'}, Q={'trusted'}));
+shell_exec(ls)

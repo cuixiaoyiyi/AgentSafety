@@ -1,0 +1,9 @@
+vector_dimensions:
+- ONE
+- HELD::Exec|{sandbox}|private+public|trusted
+- BADCAP
+fact_dim: 3
+bad_predicate: BADCAP
+state_basis_dim: 2
+primitive_transitions: 2
+semiring: Boolean

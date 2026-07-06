@@ -1,0 +1,2 @@
+c := require(Cap(Overwrite, {config}, L={'private', 'public'}, Q={'untrusted', 'trusted'}));
+write_file(config)

@@ -1,0 +1,132 @@
+[
+  {
+    "pair_id": "send",
+    "mode": "M4",
+    "effect_kind": "SendExt",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "declassify",
+    "missing_capability": "Cap(SendExt, dst=ext, label=private)",
+    "consistent": true
+  },
+  {
+    "pair_id": "delete",
+    "mode": "M1",
+    "effect_kind": "Delete",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "guard",
+    "missing_capability": "Cap(Delete, tmp)",
+    "consistent": true
+  },
+  {
+    "pair_id": "overwrite",
+    "mode": "M4",
+    "effect_kind": "Overwrite",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "guard",
+    "missing_capability": "Cap(Overwrite, config)",
+    "consistent": true
+  },
+  {
+    "pair_id": "exec",
+    "mode": "M1",
+    "effect_kind": "Exec",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "provenance",
+    "missing_capability": "Cap(Exec, provenance=untrusted, sandbox=on)",
+    "consistent": true
+  },
+  {
+    "pair_id": "patch",
+    "mode": "M3",
+    "effect_kind": "ModHarness",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "scope",
+    "missing_capability": "Cap(ModHarness, harness/test_1)",
+    "consistent": true
+  },
+  {
+    "pair_id": "verdict",
+    "mode": "M3",
+    "effect_kind": "Verdict",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "guard",
+    "missing_capability": "Cap(Verdict, oracle)",
+    "consistent": true
+  },
+  {
+    "pair_id": "instr",
+    "mode": "M2",
+    "effect_kind": "InstrUse",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "provenance",
+    "missing_capability": "Cap(InstrUse, k_web)",
+    "consistent": true
+  },
+  {
+    "pair_id": "delegate",
+    "mode": "M2",
+    "effect_kind": "Delegate",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "provenance",
+    "missing_capability": "Cap(Delegate, shell_role)",
+    "consistent": true
+  },
+  {
+    "pair_id": "doc_agent:plan_send",
+    "mode": "M4",
+    "effect_kind": "SendExt",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "declassify",
+    "missing_capability": "Cap(SendExt, dst=ext, label=private)",
+    "consistent": true
+  },
+  {
+    "pair_id": "doc_agent:plan_delete",
+    "mode": "M4",
+    "effect_kind": "Delete",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "guard",
+    "missing_capability": "Cap(Delete, tmp)",
+    "consistent": true
+  },
+  {
+    "pair_id": "swe_agent:plan_patch",
+    "mode": "M3",
+    "effect_kind": "ModHarness",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "scope",
+    "missing_capability": "Cap(ModHarness, harness/test_1)",
+    "consistent": true
+  },
+  {
+    "pair_id": "swe_agent:plan_verdict",
+    "mode": "M3",
+    "effect_kind": "Verdict",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "guard",
+    "missing_capability": "Cap(Verdict, oracle)",
+    "consistent": true
+  },
+  {
+    "pair_id": "manager_agent:plan_exec",
+    "mode": "M2",
+    "effect_kind": "Exec",
+    "buggy_unsafe": true,
+    "fixed_safe": true,
+    "repair_pattern": "provenance",
+    "missing_capability": "Cap(Exec, provenance=untrusted, sandbox=on)",
+    "consistent": true
+  }
+]

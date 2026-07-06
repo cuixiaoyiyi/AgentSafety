@@ -1,0 +1,4 @@
+cmd := memread(k_web_untrusted);
+cmd2 := validate_provenance(cmd);
+c := require(Cap(Exec, {sandbox}, L={'private', 'public'}, Q={'trusted'}));
+shell_exec(cmd2)

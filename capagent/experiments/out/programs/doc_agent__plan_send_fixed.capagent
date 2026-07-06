@@ -1,0 +1,4 @@
+x := read_file(secret);
+y := summarize(x);
+z := redact(y);
+send_email(ext, z)

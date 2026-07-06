@@ -1,0 +1,14 @@
+{
+  "cases_total": 33,
+  "buggy_cases": 16,
+  "known_bug_replay_rate": 1.0,
+  "fixed_versions": 13,
+  "fixed_version_discharge_rate": 1.0,
+  "contract_extraction_coverage": 0.941,
+  "controls_total": 4,
+  "controls_false_rejections": 0,
+  "diagnostic_quality": 1.0,
+  "explicit_matrix_agreement": 1.0,
+  "matrix_dim_max": 4,
+  "check_time_total_ms": 7.527
+}

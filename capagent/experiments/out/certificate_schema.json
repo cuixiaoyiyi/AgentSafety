@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "safe": {
+      "type": "boolean"
+    },
+    "matrix_dim": {
+      "type": "integer"
+    },
+    "nnz": {
+      "type": "integer"
+    },
+    "fact_dim": {
+      "type": "integer"
+    },
+    "closure_iterations": {
+      "type": "integer"
+    },
+    "bad_projection_zero": {
+      "type": "boolean"
+    },
+    "check_time_s": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "safe",
+    "matrix_dim",
+    "bad_projection_zero"
+  ]
+}

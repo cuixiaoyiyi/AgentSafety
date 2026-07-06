@@ -1,0 +1,6 @@
+# cloned real repositories (Milestone 5) -- large, reproducible from repos.py
+capagent/realeval/_repos/
+__pycache__/
+*.pyc
+
+*_repos*

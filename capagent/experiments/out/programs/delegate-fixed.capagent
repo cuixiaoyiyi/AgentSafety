@@ -1,0 +1,4 @@
+task := memread(k_web_untrusted);
+task2 := validate_provenance(task);
+c := require(Cap(Delegate, {shell_role}, L={'private', 'public'}, Q={'trusted'}));
+dispatch(shell_role, task2)

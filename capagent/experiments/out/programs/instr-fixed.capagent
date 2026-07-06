@@ -1,0 +1,4 @@
+m := memread(k_web_untrusted);
+m2 := validate_provenance(m);
+c := require(Cap(InstrUse, {k_web}, L={'private', 'public'}, Q={'trusted'}));
+use_as_instruction(k_web, m2)

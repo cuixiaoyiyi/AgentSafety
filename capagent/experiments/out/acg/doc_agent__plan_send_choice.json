@@ -1,0 +1,168 @@
+{
+  "name": "plan_send_choice",
+  "entry": "init",
+  "exits": [
+    "mrg4"
+  ],
+  "nodes": [
+    {
+      "id": "init",
+      "kind": "Init",
+      "label": "initial state",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": ""
+    },
+    {
+      "id": "too1",
+      "kind": "ToolCall",
+      "label": "read_file",
+      "tool": "read_file",
+      "args": [
+        "secret"
+      ],
+      "result": "x",
+      "effect_kind": "Read",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": "L86"
+    },
+    {
+      "id": "too2",
+      "kind": "ToolCall",
+      "label": "summarize",
+      "tool": "summarize",
+      "args": [
+        "x"
+      ],
+      "result": "y",
+      "effect_kind": "Transform",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": "L87"
+    },
+    {
+      "id": "llm3",
+      "kind": "LLMChoice",
+      "label": "model choice",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": "L88"
+    },
+    {
+      "id": "mrg4",
+      "kind": "Merge",
+      "label": "merge",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": ""
+    },
+    {
+      "id": "too5",
+      "kind": "ToolCall",
+      "label": "redact",
+      "tool": "redact",
+      "args": [
+        "y"
+      ],
+      "result": "z",
+      "effect_kind": "Declassify",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": "L89"
+    },
+    {
+      "id": "too6",
+      "kind": "HighImpactSink",
+      "label": "send_email",
+      "tool": "send_email",
+      "args": [
+        "ext",
+        "z"
+      ],
+      "result": null,
+      "effect_kind": "SendExt",
+      "high_impact": true,
+      "cap": null,
+      "untrusted": false,
+      "site": "L90"
+    },
+    {
+      "id": "too7",
+      "kind": "HighImpactSink",
+      "label": "send_email",
+      "tool": "send_email",
+      "args": [
+        "ext",
+        "y"
+      ],
+      "result": null,
+      "effect_kind": "SendExt",
+      "high_impact": true,
+      "cap": null,
+      "untrusted": false,
+      "site": "L92"
+    }
+  ],
+  "edges": [
+    {
+      "src": "too1",
+      "dst": "too2",
+      "kind": "control"
+    },
+    {
+      "src": "too5",
+      "dst": "too6",
+      "kind": "control"
+    },
+    {
+      "src": "llm3",
+      "dst": "too5",
+      "kind": "control"
+    },
+    {
+      "src": "too6",
+      "dst": "mrg4",
+      "kind": "control"
+    },
+    {
+      "src": "llm3",
+      "dst": "too7",
+      "kind": "control"
+    },
+    {
+      "src": "too7",
+      "dst": "mrg4",
+      "kind": "control"
+    },
+    {
+      "src": "too2",
+      "dst": "llm3",
+      "kind": "control"
+    },
+    {
+      "src": "init",
+      "dst": "too1",
+      "kind": "control"
+    }
+  ],
+  "warnings": []
+}

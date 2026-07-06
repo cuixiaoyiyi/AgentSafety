@@ -1,0 +1,66 @@
+{
+  "name": "plan_instr_buggy",
+  "entry": "init",
+  "exits": [
+    "too2"
+  ],
+  "nodes": [
+    {
+      "id": "init",
+      "kind": "Init",
+      "label": "initial state",
+      "tool": "",
+      "args": [],
+      "result": null,
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": false,
+      "site": ""
+    },
+    {
+      "id": "mr1",
+      "kind": "MemoryRead",
+      "label": "memread k_web",
+      "tool": "",
+      "args": [
+        "k_web"
+      ],
+      "result": "m",
+      "effect_kind": "",
+      "high_impact": false,
+      "cap": null,
+      "untrusted": true,
+      "site": "L75"
+    },
+    {
+      "id": "too2",
+      "kind": "HighImpactSink",
+      "label": "use_as_instruction",
+      "tool": "use_as_instruction",
+      "args": [
+        "k_web",
+        "m"
+      ],
+      "result": null,
+      "effect_kind": "InstrUse",
+      "high_impact": true,
+      "cap": null,
+      "untrusted": false,
+      "site": "L76"
+    }
+  ],
+  "edges": [
+    {
+      "src": "mr1",
+      "dst": "too2",
+      "kind": "control"
+    },
+    {
+      "src": "init",
+      "dst": "mr1",
+      "kind": "control"
+    }
+  ],
+  "warnings": []
+}

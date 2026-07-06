@@ -1,0 +1,5 @@
+{"baseline": "sink_only", "safe": false, "warnings": ["high-impact API used: dispatch (Delegate)"]}
+{"baseline": "allowlist", "safe": false, "warnings": ["tool not on allowlist: dispatch"]}
+{"baseline": "guard_dominator", "safe": true, "warnings": []}
+{"baseline": "generic_reach", "safe": true, "warnings": []}
+{"baseline": "taint_to_sink", "safe": true, "warnings": []}

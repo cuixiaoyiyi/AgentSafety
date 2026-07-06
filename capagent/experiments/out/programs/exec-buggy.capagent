@@ -1,0 +1,2 @@
+cmd := memread(k_web_untrusted);
+shell_exec(cmd)
