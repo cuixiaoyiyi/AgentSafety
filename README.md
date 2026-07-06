@@ -6,12 +6,12 @@ A core calculus for capability-safe agentic programs.
 # CapAgent
 
 A prototype checker for **capability-safe tool use** in tool-using agentic programs,
-implementing the toolchain of `capagent_implementation_plan.md` and the formal
-semantics of the paper *Capability-Safe Tool Use in Agentic Programs* (the small
+implementing the toolchain of capagent and the formal
+semantics of the paper *Capability-Safe Tool Use in Agentic Programs* (the
 language `lambda_cap`, its Boolean-semiring linear abstract semantics, and
 Action-Capability Graphs).
 
-> Target property (narrow by design): *a tool-using agent should not perform a
+> Target property : *a tool-using agent should not perform a
 > high-impact tool effect unless the current abstract state contains a matching
 > capability for the effect kind, resource scope, and provenance requirement.*
 
@@ -31,14 +31,14 @@ python tests/test_capagent.py             # 7 validation tests
 Artifacts land in `capagent/experiments/out/` (see `RESULTS.md`, `metrics_summary.json`,
 and `tables/`).
 
-## Toolchain (implementation plan Section 1)
+## Toolchain 
 
 | Command | Module | Role |
 |---|---|---|
 | `caprule-miner` | `tools/caprule_miner.py` | curate `effects.yaml` + `capability_rules.yaml` (+ evidence) |
 | `contract-extractor` | `tools/contract_extractor.py` | infer tool effect contracts from scaffold `ast` |
 | `guard-extractor` | `tools/guard_extractor.py` | extract capability grants / guards |
-| `acg-builder` | `tools/acg_builder.py` | build the Action-Capability Graph from a plan |
+| `acg-builder` | `tools/acg_builder.py` | build the Action-Capability Graph |
 | `translate` | `tools/translator.py` | ACG -> CapAgent IR (`program.capagent`) |
 | `matrix-compiler` | `tools/matrix_compiler.py` | Boolean-semiring matrices + domain spec + certificate schema |
 | `capsafe-checker` | `tools/capsafe_checker.py` | explicit-state + matrix check, witnesses, diagnostics |
@@ -48,7 +48,7 @@ and `tables/`).
 
 The **deterministic core** (`core/`) — IR, abstract domain, checker, matrices — never
 calls a language model. `llm-assist` is bounded, offline, and its output is marked
-`accepted=False`; it is never part of the trusted verification base (plan Section 3).
+`accepted=False`; it is never part of the trusted verification base.
 
 ## Formal core (`core/`)
 
@@ -76,7 +76,7 @@ python -m capagent witness-replay
 python -m capagent llm-assist          capagent/scaffolds/doc_agent.py
 ```
 
-## Milestone 5 — real repositories
+## Real repositories
 
 ```bash
 python -m capagent run-real        # scan pinned real repos + replay grounded witnesses
@@ -84,10 +84,10 @@ python -m capagent scan-repo <path> --mode M1
 ```
 
 Pinned subjects (shallow-cloned into `capagent/realeval/_repos/`, gitignored): **open-interpreter**
-(M1), **smolagents** (M3), **SWE-bench** (M3), **MetaGPT** (M2), **langchain-mcp-adapters** (M4).
+, **smolagents** , **SWE-bench** , **MetaGPT** , **langchain-mcp-adapters** .
 The scanner produces an automated high-impact **sink & guard inventory** over ~1.2k files /
-180k LOC (RQ2); security witnesses are manually-curated capability-safety properties encoded
-as `lambda_cap` pairs and *grounded* in real sink locations (RQ1/RQ3). Results and honest
+180k LOC ; security witnesses are manually-curated capability-safety properties encoded
+as `lambda_cap` pairs and *grounded* in real sink locations. Results and
 scope in `capagent/experiments/out_real/REAL_REPORT.md`.
 
 ## Scope of the guarantee
